@@ -1,5 +1,5 @@
-{% set version = "1.8.0" %}
-{% set sha256 = "abc0acc1d15b4b9c97c65cd9689bd6400081853b9980ea428d3c8572dd791522" %}
+{% set version = "1.8.3" %}
+{% set sha256 = "114871d4d63606b4af424a8433cd923e4ff66896b244bb7ac97b9da47f71e79e" %}
 
 package:
   name: gst-plugins-base
