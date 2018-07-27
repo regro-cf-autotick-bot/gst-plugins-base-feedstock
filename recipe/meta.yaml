@@ -1,27 +1,35 @@
-{% set version = "1.8.0" %}
-{% set sha256 = "abc0acc1d15b4b9c97c65cd9689bd6400081853b9980ea428d3c8572dd791522" %}
+{% set version = "1.12.2" %}
 
 package:
   name: gst-plugins-base
   version: {{ version }}
 
 source:
-  fn: gst-plugins-base-{{ version }}.tar.xz
   url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-{{ version }}.tar.xz
-  sha256: {{ sha256 }}
+  sha256: 5067dce3afe197a9536fea0107c77213fab536dff4a213b07fc60378d5510675
 
 build:
   skip: true  # [win or osx]
   number: 0
+  run_exports:
+    # remove symbols at .90 patch releases just before minor versions?
+    #    https://abi-laboratory.pro/tracker/timeline/gstreamer/
+    - {{ pin_subpackage('gst-plugins-base', max_pin='x.x') }}
 
 requirements:
   build:
-    - gstreamer 1.8.*
+    - {{ compiler('c') }}
     - m4
+    - libxcb  # [linux]
     - perl
-    - xz 5.2.*
+  host:
+    - gstreamer
+    - libxcb
+    - xz
   run:
-    - gstreamer 1.8.*
+    - gstreamer
+    - libxcb
+    - xz
 
 test:
   commands:
@@ -39,9 +47,15 @@ test:
 
 about:
     home: http://gstreamer.freedesktop.org/
-    license: GPL2
+    license: GPL-2.0
     license_file: COPYING
     summary: "GStreamer Base Plug-ins"
+    description: |
+      GStreamer Base Plug-ins is a well-groomed and well-maintained collection of
+      GStreamer plug-ins and elements, spanning the range of possible types of
+      elements one would want to write for GStreamer.
+    doc_url: https://gstreamer.freedesktop.org/documentation/
+    doc_source_url: https://github.com/GStreamer/gst-plugins-base/tree/master/docs
 
 extra:
   recipe-maintainers:
