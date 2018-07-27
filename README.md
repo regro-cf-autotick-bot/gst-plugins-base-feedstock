@@ -3,25 +3,30 @@ About gst-plugins-base
 
 Home: http://gstreamer.freedesktop.org/
 
-Package license: GPL2
+Package license: GPL-2.0
 
 Feedstock license: BSD 3-Clause
 
 Summary: GStreamer Base Plug-ins
 
+GStreamer Base Plug-ins is a well-groomed and well-maintained collection of
+GStreamer plug-ins and elements, spanning the range of possible types of
+elements one would want to write for GStreamer.
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/gst-plugins-base-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/gst-plugins-base-feedstock)
-OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/gst-plugins-base-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/gst-plugins-base-feedstock)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/gst-plugins-base/badges/version.svg)](https://anaconda.org/conda-forge/gst-plugins-base)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/gst-plugins-base/badges/downloads.svg)](https://anaconda.org/conda-forge/gst-plugins-base)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gst--plugins--base-green.svg)](https://anaconda.org/conda-forge/gst-plugins-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gst-plugins-base.svg)](https://anaconda.org/conda-forge/gst-plugins-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gst-plugins-base.svg)](https://anaconda.org/conda-forge/gst-plugins-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gst-plugins-base.svg)](https://anaconda.org/conda-forge/gst-plugins-base) |
 
 Installing gst-plugins-base
 ===========================
@@ -66,6 +71,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
