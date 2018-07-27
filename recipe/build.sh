@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # gstreamer expects libffi to be in lib64 for some reason.
-mkdir $PREFIX/lib64
+mkdir -p $PREFIX/lib64
 cp -r $PREFIX/lib/libffi* $PREFIX/lib64
 
 # The datarootdir option places the docs into a temp folder that won't
 # be included in the package (it is about 12MB).
 ./configure --disable-examples --prefix="$PREFIX" --datarootdir=`pwd`/tmpshare
-make
+make -j${CPU_COUNT} ${VERBOSE_AT}
 # Some tests fail because not all plugins are built and it seems
 # tests expect all plugins
 # See this link for an explanation:
