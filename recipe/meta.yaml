@@ -1,4 +1,4 @@
-{% set version = "1.12.2" %}
+{% set version = "1.12.5" %}
 
 package:
   name: gst-plugins-base
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-{{ version }}.tar.xz
-  sha256: 5067dce3afe197a9536fea0107c77213fab536dff4a213b07fc60378d5510675
+  sha256: 8fd9f25b65f3286f43530868b501a4e7cdc3f1568be78c75da716cd2559b712e
 
 build:
   skip: true  # [win or osx]
