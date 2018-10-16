@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -ex
+
+if [[ $(uname) == Linux ]] ; then
+    export LDFLAGS="$LDFLAGS -Wl,-rpath-link,$PREFIX/lib"
+fi
+
 # gstreamer expects libffi to be in lib64 for some reason.
 mkdir -p $PREFIX/lib64
 cp -r $PREFIX/lib/libffi* $PREFIX/lib64
@@ -8,6 +14,7 @@ cp -r $PREFIX/lib/libffi* $PREFIX/lib64
 # be included in the package (it is about 12MB).
 ./configure --disable-examples --prefix="$PREFIX" --datarootdir=`pwd`/tmpshare
 make -j${CPU_COUNT} ${VERBOSE_AT}
+
 # Some tests fail because not all plugins are built and it seems
 # tests expect all plugins
 # See this link for an explanation:
